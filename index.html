@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html class="no-js" style="background-color: #1D1E26; color: azure;">
+
+<head>
+    <title>Font to Bitmap | @maxmorozoff</title>
+
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <meta lang="en-EN">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, minimal-ui" />
+    <meta name="color-scheme" content="light dark " />
+    <!-- <link rel="icon" type="image/svg"  href="/icon.svg"> -->
+    <meta name="theme-color" content="#ef2640" />
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;500;800&display=swap" rel="stylesheet"> -->
+    <!-- <link href="./index.css" rel="stylesheet"> -->
+    <script>
+        document.documentElement.className = 
+           document.documentElement.className.replace("no-js","js");
+        const isSafariBrowser = navigator.userAgent.indexOf('Safari') > -1 && navigator.userAgent.indexOf('Chrome') <= -1
+        if (isSafariBrowser) alert("Supported browsers: Google Chrome / Chromium, Mozilla Firefox.\nThis site wasn't tested on Safari and may not work.")
+    </script>
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+    <style>
+        /* @import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
+        @import url(https://fonts.googleapis.com/css?family=Lobster); */
+        /* @font-face {
+            font-family: 'PT Mono';
+            src:  url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap') format('woff2');
+        } */
+        /* input[type="file"], */
+        :root{
+            font-size: 1rem;
+
+        }
+        *:not(input) {
+            font-family: 'Fira Mono', monospace;
+        }
+        #canvas {
+            /* font-family: 'Share Tech Mono', monospace; */
+            font-family: 'Fira Mono', monospace;
+            /* font-family: 'PT Mono', monospace; */
+            font-size: 10rem;
+
+            display: flex;
+            flex-wrap: wrap;
+        }
+        input:checked ~ * canvas {
+        /* section:hover canvas { */
+            /* width: 25rem; */
+            border: none;
+            margin: 2px;
+            image-rendering: pixelated;
+            height: auto;
+            box-shadow:  none;
+
+        }
+        canvas {
+            /* border: .2rem solid white; */
+            box-sizing: border-box;
+            box-shadow:  0 0 0 .2rem white;
+            height: 80vh;
+            max-height: 20rem;
+            margin: 10px;
+            image-rendering: pixelated;
+            touch-action:none;
+
+        }
+        span {
+            position: relative;
+        }
+        #canvas span:hover::before {
+            content: attr(data-char);
+            /* display: block; */
+            position: absolute;
+            left: 45%;
+            top:-2rem;
+            color: tomato;
+            font-size: 2rem;
+            /* border: tomato solid 1px; */
+        }
+        main{
+            margin-top: 2rem;
+        }
+    </style>
+    <!-- <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+        </style> -->
+</head>
+<body>
+    <input type="checkbox" id="100"/>
+    <label for="100">100% zoom</label>
+    <input type="file" onchange="read(this)" accept=".h"/>
+    <button onclick="save()">Save</button>
+    <main><section id="canvas"></section></main>
+    <!-- <main><section id="canvas">0123456789</section></main> -->
+    <script src="index.js" defer></script>
+</body>
+</html>
